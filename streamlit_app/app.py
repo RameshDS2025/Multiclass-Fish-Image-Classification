@@ -504,9 +504,48 @@ elif st.session_state.page == "contact":
 
 elif st.session_state.page == "stats":
     st.markdown("<div class='content-card'><h3>📊 Model Performance Metrics</h3>", unsafe_allow_html=True)
-    # Simulation of metrics
-    st.metric("Overall Accuracy", "94.2%", "+1.2%")
-    st.metric("Inference Time", "42ms", "-5ms")
+    
+    col_m1, col_m2 = st.columns(2)
+    
+    with col_m1:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+                padding: 30px;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                margin-bottom: 20px;
+            '>
+                <p style='color: rgba(255, 255, 255, 0.8); margin: 0; font-size: 16px; font-weight: 600; text-transform: uppercase;'>Overall Accuracy</p>
+                <h1 style='color: white; margin: 10px 0; font-size: 54px; font-weight: 900; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.2));'>94.2%</h1>
+                <div style='background: rgba(255, 255, 255, 0.2); display: inline-block; padding: 5px 15px; border-radius: 50px;'>
+                    <span style='color: #00ff87; font-weight: 800;'>↑ +1.2%</span> <span style='color: white; font-size: 12px;'>vs last week</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    with col_m2:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, #48cae4 0%, #00b4d8 100%);
+                padding: 30px;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0 10px 25px rgba(72, 202, 228, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                margin-bottom: 20px;
+            '>
+                <p style='color: rgba(255, 255, 255, 0.8); margin: 0; font-size: 16px; font-weight: 600; text-transform: uppercase;'>Inference Time</p>
+                <h1 style='color: white; margin: 10px 0; font-size: 54px; font-weight: 900; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.2));'>42ms</h1>
+                <div style='background: rgba(255, 255, 255, 0.2); display: inline-block; padding: 5px 15px; border-radius: 50px;'>
+                    <span style='color: #00ff87; font-weight: 800;'>↓ -5ms</span> <span style='color: white; font-size: 12px;'>optimized</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<p style='font-weight: 700; color: #1d1f02; margin-bottom: 5px;'>Model Training Maturity</p>", unsafe_allow_html=True)
     st.progress(94)
     st.markdown("</div>", unsafe_allow_html=True)
 

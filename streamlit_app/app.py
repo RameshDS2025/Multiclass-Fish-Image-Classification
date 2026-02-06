@@ -427,7 +427,15 @@ elif st.session_state.page == "run_model":
                                 x=preds*100, y=CLASS_NAMES, orientation='h',
                                 marker=dict(color=preds, colorscale='Blues')
                             ))
-                            fig.update_layout(template="plotly_dark", height=300, margin=dict(l=0,r=0,t=0,b=0), paper_bgcolor='rgba(0,0,0,0)')
+                            fig.update_layout(
+                                template="plotly_dark", 
+                                height=350, 
+                                margin=dict(l=10, r=10, t=10, b=10), 
+                                paper_bgcolor='rgba(0,0,0,0)',
+                                font=dict(color='#1d1f02', family='Outfit, sans-serif'),
+                                yaxis=dict(tickfont=dict(color='#1d1f02', size=14, weight='bold')),
+                                xaxis=dict(tickfont=dict(color='#1d1f02'))
+                            )
                             st.plotly_chart(fig, width="stretch")
                 else:
                     st.error("Model unavailable.")

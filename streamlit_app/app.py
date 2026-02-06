@@ -316,9 +316,9 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 st.sidebar.markdown("---")
-run_model_btn = st.sidebar.button("🚀 Run Fish Classifier", type="primary", use_container_width=True)
-dataset_stats_btn = st.sidebar.button("📊 Model Performance", type="primary", use_container_width=True)
-sample_gallery_btn = st.sidebar.button("📸 Sample Gallery", type="primary", use_container_width=True)
+run_model_btn = st.sidebar.button("🚀 Run Fish Classifier", type="primary", width="stretch")
+dataset_stats_btn = st.sidebar.button("📊 Model Performance", type="primary", width="stretch")
+sample_gallery_btn = st.sidebar.button("📸 Sample Gallery", type="primary", width="stretch")
 
 # Graphical Did You Know
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
@@ -338,11 +338,11 @@ st.sidebar.markdown("""
 
 # Top Navigation Bar
 col1, col2, col3, col4, col5 = st.columns(5)
-with col1: about_us = st.button("Know Us", use_container_width=True)
-with col2: species_guide = st.button("Species Guide", use_container_width=True)
-with col3: datasets = st.button("Dataset Info", use_container_width=True)
-with col4: insights = st.button("AI Insights", use_container_width=True)
-with col5: contact = st.button("Reach Support", use_container_width=True)
+with col1: about_us = st.button("Know Us", width="stretch")
+with col2: species_guide = st.button("Species Guide", width="stretch")
+with col3: datasets = st.button("Dataset Info", width="stretch")
+with col4: insights = st.button("AI Insights", width="stretch")
+with col5: contact = st.button("Reach Support", width="stretch")
 
 # Header
 st.markdown('<div style="padding:10px; text-align:center;"><h1 style="color: #90e0ef; font-size: 3.5em; font-family: \'Arial Black\', sans-serif; font-weight: bold; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">🌊 Aquatic Species Intelligence</h1></div>', unsafe_allow_html=True)
@@ -369,7 +369,7 @@ if st.session_state.page == "home":
             <span style="font-size: 20px;">Use the sidebar to classify species or explore the top tabs for information.</span>
         </div>
     """, unsafe_allow_html=True)
-    st.image("https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop", caption="Empowering Marine Research with AI", use_container_width=True)
+    st.image("https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop", caption="Empowering Marine Research with AI", width="stretch")
 
 elif st.session_state.page == "run_model":
     st.markdown("<div class='content-card'><h3>🚀 Fish Specie Classifier</h3>", unsafe_allow_html=True)
@@ -381,7 +381,7 @@ elif st.session_state.page == "run_model":
         uploaded_file = st.file_uploader("Upload a fish image...", type=["jpg", "png", "jpeg"])
         if uploaded_file:
             img = Image.open(uploaded_file)
-            st.image(img, caption="Target Image", use_container_width=True)
+            st.image(img, caption="Target Image", width="stretch")
             
             if st.button("Execute AI Analysis"):
                 if model:
@@ -406,7 +406,7 @@ elif st.session_state.page == "run_model":
                                 marker=dict(color=preds, colorscale='Blues')
                             ))
                             fig.update_layout(template="plotly_dark", height=300, margin=dict(l=0,r=0,t=0,b=0), paper_bgcolor='rgba(0,0,0,0)')
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig, width="stretch")
                 else:
                     st.error("Model unavailable.")
     st.markdown("</div>", unsafe_allow_html=True)

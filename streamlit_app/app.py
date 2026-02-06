@@ -100,24 +100,26 @@ html, body, [class*="css"] {{
     background: rgba(0,0,0,0);
 }}
 
-/* Button styling - Modern & Rounded */
+/* Button styling - Modern & Rounded with Deep Red Theme */
 div.stButton > button {{
-    background-color: #03045e;
+    background: linear-gradient(135deg, #660818 0%, #8a0c20 100%);
     color: white !important;
     font-family: 'Outfit', sans-serif !important;
     font-weight: 600;
     font-size: 16px;
     border-radius: 50px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 10px 24px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(3, 4, 94, 0.2);
+    box-shadow: 0 4px 15px rgba(102, 8, 24, 0.3);
+    width: 100%;
 }}
 div.stButton > button:hover {{
-    background-color: #0077b6;
+    background: linear-gradient(135deg, #8a0c20 0%, #660818 100%);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 119, 182, 0.3);
+    box-shadow: 0 8px 25px rgba(138, 12, 32, 0.4);
     color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }}
 
 .block-container {{
@@ -125,23 +127,27 @@ div.stButton > button:hover {{
     padding-bottom: 1rem;
 }}
 
-/* Content Card with Modern Typography */
+/* Content Card with Vibrant Themed Background */
 .content-card {{
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, rgba(181, 228, 140, 0.9) 0%, rgba(153, 217, 140, 0.9) 100%);
+    backdrop-filter: blur(20px);
     padding: 40px;
     border-radius: 25px;
-    color: #1b263b;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    color: #1d1f02 !important;
+    border: 2px solid rgba(29, 31, 2, 0.2);
+    box-shadow: 0 20px 50px rgba(29, 31, 2, 0.15);
     margin-bottom: 25px;
     animation: fadeIn 0.8s ease-in-out;
+}}
+
+.content-card p, .content-card li, .content-card span, .content-card div {{
+    color: #1d1f02 !important;
+    font-weight: 500;
 }}
 
 .species-item {{
     background: rgba(3, 4, 94, 0.5);
     backdrop-filter: blur(20px);
-    color: #ffffff;
     padding: 40px 20px;
     border-radius: 30px;
     margin-bottom: 30px;
@@ -150,13 +156,11 @@ div.stButton > button:hover {{
     text-align: center;
     border: 3px solid rgba(144, 224, 239, 0.6);
     
-    /* Metallic/Glass Text Effect */
-    background-image: linear-gradient(to bottom, #ffffff 0%, #90e0ef 50%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* Textured Font using #373802 */
+    color: #373802 !important;
     
-    /* Deep Glow Shadow */
-    filter: drop-shadow(0 0 15px rgba(0, 180, 216, 0.8));
+    /* Subtle Glow for depth */
+    filter: drop-shadow(0 0 5px rgba(55, 56, 2, 0.3));
     
     text-transform: uppercase;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -229,19 +233,37 @@ section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] button {{
     display: inline-flex !important;
 }}
 
-/* Hide any stray text labels that aren't inside our content cards */
+/* Base text color for clarity */
 .stApp {{
-    color: transparent !important;
+    color: #1b263b;
 }}
 
-.stApp *, [data-testid="stSidebar"] * {{
-    color: inherit !important;
+/* Fix File Uploader Visibility */
+[data-testid="stFileUploader"] section {{
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(0, 180, 216, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+}}
+
+[data-testid="stFileUploader"] label, 
+[data-testid="stFileUploader"] p, 
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] small {{
+    color: #400326 !important;
+    font-weight: 600 !important;
 }}
 
 /* Ensure our specific cards and text are visible */
-.content-card, .content-card *, .welcome-msg, .species-item, .stMarkdown, .stText, .stButton button {{
+.welcome-msg, .species-item, .stMarkdown, .stText, .stButton button {{
     color: initial !important; 
-    font-size: initial !important;
+}}
+
+/* Custom styling for the file uploader button */
+[data-testid="stFileUploader"] button {{
+    background-color: #0077b6 !important;
+    color: white !important;
+    border-radius: 10px !important;
 }}
 </style>
 """

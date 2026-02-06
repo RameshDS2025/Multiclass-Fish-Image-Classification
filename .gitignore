@@ -1,18 +1,9 @@
-# General
+# --- Python ---
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Distribution / Packaging
+*.so
+.Python
 build/
 develop-eggs/
 dist/
@@ -25,26 +16,66 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
-# Jupyter Notebooks
-.ipynb_checkpoints
+# --- Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+bin/
+include/
+pypackages/
 
-# IDEs
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints
+
+# --- IDEs ---
 .vscode/
 .idea/
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
 
-# Project Specific - Data
+# --- OS Specific ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Streamlit ---
+.streamlit/config.toml
+.streamlit/secrets.toml
+
+# --- Project Specific - Data & Models ---
+# Ignore raw data and datasets
 data/
+datasets/
+archive/
 
-# Project Specific - Models
+# Ignore model files (except possibly the main deployment model)
+# To track a specific model, use: !models/BEST_FISH_MODEL.keras
 models/*.h5
 models/*.pt
 models/*.pth
 models/*.keras
+models/*.tflite
+models/*.onnx
 
-# Logs
+# --- Logs ---
 *.log
+logs/
